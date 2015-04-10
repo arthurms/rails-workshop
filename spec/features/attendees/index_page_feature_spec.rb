@@ -15,4 +15,9 @@ describe 'attendees index page' do
       expect(page).to have_content(attendee.name)
     end
   end
+
+  it 'has link to create a new attendee' do
+    visit '/attendees'
+    expect(page).to have_link 'New attendee'
+  end
 end
