@@ -1,5 +1,10 @@
 require 'spec_helper'
 
 describe Workshop, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'validates the presence of its name' do
+    workshop = Workshop.new(name: '')
+
+    expect(workshop).to be_invalid
+    expect(workshop).to_not be_valid
+  end
 end
