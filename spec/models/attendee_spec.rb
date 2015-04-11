@@ -6,4 +6,8 @@ describe Attendee, :type => :model do
     expect(Attendee.create.errors.messages).to eq name: ["can't be blank"]
   end
 
+  it 'should belong to a Workshop' do
+    expect(subject).to belong_to(:workshop)
+  end
+
 end
