@@ -7,4 +7,6 @@ describe Workshop, :type => :model do
     expect(workshop).to be_invalid
     expect(workshop).to_not be_valid
   end
+
+  it { is_expected.to have_many(:attendees) }
 end
