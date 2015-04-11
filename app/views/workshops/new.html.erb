@@ -1,2 +1,22 @@
-<h1>Workshops#new</h1>
-<p>Find me in app/views/workshops/new.html.erb</p>
+<h1>New Workshop</h1>
+<%= form_for :workshop, url: workshops_path do |f| %>
+  <% if @workshop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@workshop.errors.count, "error") %> prohibited
+        this workshop from being saved:</h2>
+      <ul>
+      <% @workshop.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -2,7 +2,11 @@
 
 <table>
   <% @workshops.each do |workshop| %>
-    <tr><%= workshop.name %></tr>
+    <tr>
+      <td>
+        <%= workshop.name %>
+      </td>
+    </tr>
   <% end %>
 </table>
 
